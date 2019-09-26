@@ -7,7 +7,8 @@ Author: Dave Winter
 Version: 0.1
 Author URI: https://dauid.us
 */
-
+//I am adding a couple comments into 
+//this file to test out github's features
 // allow Sections in custom post types
 function generate_add_section_post_types()
 {
