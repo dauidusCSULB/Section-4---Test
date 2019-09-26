@@ -25,13 +25,13 @@ add_action( 'admin_enqueue_scripts', 'enqueue_dees_scripts' );
 
 /* list all user-editable pages and edit links */
 /* and hide admin pages from non-admins */
-function pelican_list_pages($query) {
+function pelican_list_stuff($query) {
 	$url = get_bloginfo('url');
 	$whodat = get_current_user_id();
 	$content = '<div id="dash_list_pages" class="list_pages">';
 
 		// if admin user then show admin pages
-	    if ( (!($whodat == '1')) && (!($whodat == '2')) ) {
+	    if ( (!($whodat == '10')) && (!($whodat == '20')) ) {
 	    	$args = array(
 				'exclude' => array('40','49','770','1391'),
 				'post_status'  => 'publish,draft'
@@ -50,13 +50,13 @@ function pelican_list_pages($query) {
 	    	$x++;
 	    }
 
-	    $content .= '<h2>Pages <span>(';
+	    $content .= '<h1>Page <span>(';
 	    if ($x < '10') {
 	    	$content .= 'showing all ' . $x;
 	    } else {
 	    	$content .= 'showing 10 of ' . $x;
 	    }
-	    $content .= ')</span></h2> <a class="edit_all_link" href="' . $url . '/wp-admin/edit.php?post_type=page">manage all pages</a>';
+	    $content .= ')</span></h1> <a class="edit_all_link" href="' . $url . '/wp-admin/edit.php?post_type=page">manage all pages</a>';
 	    
 	    // define home and blog pages
 	    $frontpage_id = get_option( 'page_on_front' );
@@ -121,7 +121,7 @@ function pelican_list_pages($query) {
     return $content;
 
 }
-add_shortcode( 'pelican-list-pages', 'pelican_list_pages' );
+add_shortcode( 'pelican-list-stuff', 'pelican_list_pages' );
 
 
 /* list all user-editable pages in dashboard */
