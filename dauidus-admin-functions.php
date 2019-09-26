@@ -15,6 +15,13 @@ function generate_add_section_post_types()
 }
 add_filter( 'generate_sections_post_types','generate_add_section_post_types' );
 
+// allow Sections in custom post types
+function generate_add_section_post_types()
+{
+      return array( 'page','post','product' );
+}
+add_filter( 'generate_sections_post_types','generate_add_section_post_types' );
+
 
 // move Collapse Menu to top
 function collapse_menu_button() { ?>
