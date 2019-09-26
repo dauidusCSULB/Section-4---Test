@@ -19,7 +19,7 @@ add_filter( 'generate_sections_post_types','generate_add_section_post_types' );
 // allow Sections in custom post types
 function generate_add_section_post_types()
 {
-      return array( 'page','post','product' );
+      return array( 'page','post','product', 'service', 'user' );
 }
 add_filter( 'generate_sections_post_types','generate_add_section_post_types' );
 
